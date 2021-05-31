@@ -1,0 +1,30 @@
+body{
+    background-color: #EBEBEB;
+}
+
+
+
+.d{
+    border: 2px solid blueviolet;
+}
+
+
+
+/* 
+ BARRA DE NAVEGAÇÃO
+*/
+.custom-navbar{
+    background-color: #FFF159 !important;
+}
+.custom-navbar .fa{
+    color: #2D3277 !important;
+}
+
+.nav-link, .navbar-brand{
+    color: #2D3277 !important;
+    font-weight: bolder;
+}
+.nav-brand{
+    color: red !important;
+}
+
