@@ -99,3 +99,27 @@ CARROSSEL
     object-position: bottom;
     min-height: 250px;
 }
+
+
+/*============== 
+ SLIDER
+==============*/
+
+.card-custom{
+    /* width: 500px !important; */
+    min-width: 400px;
+    background-color: red;
+}
+
+
+.item{
+    min-width: 300px;
+}
+
+
+
+
+
+
+
+
