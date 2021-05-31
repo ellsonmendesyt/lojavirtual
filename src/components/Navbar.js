@@ -10,16 +10,20 @@ const Navbar = () => {
 
     return ( 
     <header>
-        <nav className="navbar navbar-light bg-light custom-navbar">
-            <Link className="navbar-brand">Rockshop</Link>
-            <form className="form-inline">
-                <div className="input-group mb-3">
+        <nav className="navbar navbar-light bg-light custom-navbar align-items-center">
+            <Link className="navbar-brand" to='/'>Rockshop</Link>
+            <form className="form w-75" id='busca'>
+                <div className="input-group ">
                 <input type="text" className="form-control" placeholder="Buscar produtos"/>
                 <div className="input-group-append">
-                <button className="btn btn-outline-secondary" type="button"><i className="fa fa-search"></i></button>
+                <button className="btn btn-outline-secondary" type="button" id='busca-btn'><i className="fa fa-search "></i></button>
                 </div>
                 </div>
             </form>
+            <div className="cart ">
+                <Link to='/'><i className="fa fa-cart-arrow-down fa-2x" ></i></Link>
+                <Link to='/'><i className="fa fa-sign-in fa-2x ml-3" ></i></Link>
+            </div>
         </nav>
     </header>
     );

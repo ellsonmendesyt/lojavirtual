@@ -28,3 +28,41 @@ body{
     color: red !important;
 }
 
+.nav{
+    box-sizing: border-box;
+}
+
+#busca{
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+#busca input{
+    border: none !important;
+
+}
+#busca input:focus{
+    box-shadow: none !important;
+
+}
+
+#busca .btn-outline{
+    border: none !important;
+}
+
+#busca .input-group-append{
+  background-color: #fff;
+  border: 1px solid transparent !important;
+}
+
+ #busca-btn{
+    border: none !important;
+    /* background-color:red !important; */
+    border-left: 1px solid lightgray !important;
+}
+#busca-btn:hover{
+    background-color: #fff;
+}
+
+/* 
+ cor do placeholder mudar  para essa #E8E8E8
+*/
