@@ -37,4 +37,23 @@ const {Usuario} = require('./models');
 
 CRIAR A TABELA DE USUARIOS COM MIGRATIONS
 sequelize db:migrate
+
+
+
+
+
+CRIAR O MODEL DE PRODUTOS
+
+
+nome
+descricao
+img
+desconto
+preco
+novopreco
+
+
+sequelize model:generate  --name Produto  --attributes nome:string, descricao:text, img:string, promocao:boolean, desconto:decimal, preco:decimal, novopreco:decimal
+
+
  
