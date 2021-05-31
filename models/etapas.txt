@@ -1,0 +1,15 @@
+CRIA A ESTRUTURA
+
+
+INICIALIZA O SEQUELIZE
+
+
+
+
+CRIA O BANCO DE DADOS
+
+ sequelize db:create
+
+
+
+ 
