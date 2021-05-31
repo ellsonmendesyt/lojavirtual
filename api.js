@@ -1,6 +1,6 @@
 const express = require('express');
 const cors    = require('cors');
-const {sequelize,Usuario}  = require('./models');
+const {sequelize,Usuario, Carrosel}  = require('./models');
 
 const app = express();
 app.use(express.json())
@@ -58,11 +58,30 @@ app.get('/usuario/:id', async(req,res)=>{
 
 
 
+// ADICIONAR CARROSSEIS
+
+app.post('/criar-carrosel', async(req,res)=>{
+    const {img,titulo,subtitulo}=req.body;
+    try{
+        const carrosel = await Carrosel.create({img,titulo,subtitulo})
+        return res.json(carrosel)
+    }catch(erro){
+        console.error(erro);
+        return res.status(500).json({msg:'erro'})
+    }
+  })
 
 
+  app.get('/carroseis', async (req,res)=>{
 
-
-
+    try{
+        const carroseis = await Carrosel.findAll();
+        return res.status(200).json(carroseis);
+    }catch(erro){
+        return res.status(500).json({msg:'erro'})
+        console.error(erro);
+    }
+})
 
 
 
