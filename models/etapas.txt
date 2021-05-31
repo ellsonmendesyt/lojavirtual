@@ -57,3 +57,25 @@ sequelize model:generate  --name Produto  --attributes nome:string, descricao:te
 
 
  
+
+===================================
+INSTALAR OWLCAROUSEL NO react
+===================================
+npm install react-owl-carousel
+
+import OwCarousel from 'react-owl-carousel';
+
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+
+
+
+<OwlCarousel>
+ <div className
+</OwCarousel>
+
+
+
+
+ RECURSOS
+ https://stackoverflow.com/questions/44175049/how-to-save-images-for-react-application/44252443

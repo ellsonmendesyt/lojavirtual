@@ -9,9 +9,8 @@ import Home from './components/home'
 function App() {
   return (
   
-     <Router>
-    
-         <Route exact path='/' component={Navbar}/>
+    <Router>
+       <Navbar/>
        <Switch >
        <Route exact path='/' component={Home}/>
        </Switch>
