@@ -1,10 +1,15 @@
-import filme from '../imgs/1.jpg';
-import estudo from '../imgs/2.jpg';
-import joice from '../imgs/3.jpg';
+import filme from '../assets/carrossel/quarto.jpg';
+import estudo from '../assets/carrossel/calor.jpg';
+import joice from '../assets/carrossel/energeticos.jpg';
 import {useState} from 'react';
 
 
+
+
 export default function Carrossel() {
+
+        const [base, setBase]=useState('../assets/carrossel/');
+
 
        const [dados,]=useState([
            {img:filme,titulo:'FALEMAIS30',subtitulo:'Ideal para quem gosta de ficar conectado'},
@@ -12,16 +17,20 @@ export default function Carrossel() {
            {img:joice,titulo:'FALEMAIS120',subtitulo:'Falador e internautas hard core'}
         ])
 
+
+
     return (
         <div id="hero"  className="carousel slide  w-100" data-ride="carousel">
         <div className="carousel-inner">
           {dados.map((dado,index)=>
-            <div className={index===0 ? 'carousel-item active': 'carousel-item'} key={dado.titulo}>
+            <div className={index===0 ? 'carousel-item active ': 'carousel-item '} key={dado.titulo}>
               {console.log(index)}
             <img src={dado.img} className="d-block w-100 " />
             <div className="carousel-caption d-none d-md-block">
-                {/* <h5>{dado.titulo}</h5> */}
-                {/* <p>{dado.subtitulo}</p> */}
+                <h5>{dado.titulo}</h5> 
+                <p>{dado.subtitulo}</p>
+
+                {console.log(base)}
             </div>
             </div>
               )}

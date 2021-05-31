@@ -4,9 +4,9 @@ body{
 .d{
     border: 2px solid blueviolet;
 }
-/* 
+/*============================
  BARRA DE NAVEGAÇÃO
-*/
+=============================*/
 .custom-navbar{
     background-color: #FFF159 !important;
 }
@@ -82,4 +82,20 @@ body{
     #busca{
         width:70%;
     }
+}
+
+
+/*===================================== 
+CARROSSEL
+=======================================*/
+
+.carousel-item{
+    min-height: 250px;
+}
+
+.carousel-item img{
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    min-height: 250px;
 }
