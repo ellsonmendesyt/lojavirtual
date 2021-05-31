@@ -12,4 +12,29 @@ CRIA O BANCO DE DADOS
 
 
 
+Gerar o Model de usuarios
+
+
+sequelize model:generate  --name Usuario  --attributes nome:string, email:string, senha:string
+
+
+IMPORTA A CONEXAO DA PASTA DE MODELS
+const {sequelize} = require('./models');
+
+
+MANDA CRIAR AS TABELAS COM BASE NO MODEL
+async function main(){
+
+    await sequelize.sync();
+}
+
+
+
+IMPORTAR USUARIO DO MODEL
+
+const {Usuario} = require('./models');
+
+
+CRIAR A TABELA DE USUARIOS COM MIGRATIONS
+sequelize db:migrate
  
