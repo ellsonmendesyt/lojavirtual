@@ -10,8 +10,8 @@ function App() {
   
      <Router>
     
-       <Switch >
          <Route exact path='/' component={Navbar}/>
+       <Switch >
       
        </Switch>
        
