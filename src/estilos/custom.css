@@ -106,18 +106,33 @@ CARROSSEL
 ==============*/
 
 .card-custom{
-    /* width: 500px !important; */
-    min-width: 400px;
-    background-color: red;
+    
+    min-width: 200px !important;
+    max-width: 300px !important;
+    transition: all .5s;
+}
+
+.card-custom:hover{
+    box-shadow: 3px 9px 30px rgba(0,0,0,0.3);
 }
 
 
-.item{
-    min-width: 300px;
+
+.custom-img{
+    width: 100% !important;
 }
 
-
-
+.card-body{
+    padding: 0 !important;
+    border-bottom: 0px solid transparent !important;
+    /* background-color: cornsilk !important; */
+}
+.card-footer{
+    
+    border: none !important;
+    border-top: 1px solid lightgray !important;
+    background-color: #fff;
+}
 
 
 
