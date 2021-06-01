@@ -2,12 +2,11 @@
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 
-export default function Carrossel() {
+export default function Carousel() {
         const [dados, setDados]=useState([]);
 
       const buscar = async ()=>{
         const {data} = await axios('http://localhost:4000/carroseis')
-          console.log(data);
           setDados(data);
       }
 
@@ -21,12 +20,12 @@ export default function Carrossel() {
         <div className="carousel-inner">
           {dados && dados.map((dado,index)=>           
             <div className={index===0 ? 'carousel-item active ': 'carousel-item '} key={dado.titulo}>
-              {console.log(index)}
-            <img src={`${process.env.PUBLIC_URL}/assets/carrossel/${dado.img}`} className="d-block w-100 " />
+          
+            <img src={`${process.env.PUBLIC_URL}/assets/carrossel/${dado.img}`} className="d-block w-100 " alt='' />
             <div className="carousel-caption d-none d-md-block">
                 <h5>{dado.titulo}</h5> 
                 <p>{dado.subtitulo}</p>
-                {console.log(dado.img)}
+                
             </div>
             </div>
           )}

@@ -4,45 +4,24 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Produto extends Model {
-
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
     static associate(models) {
       // define association here
     }
   };
   Produto.init({
-    nome: {
-      type:DataTypes.STRING,
-      allowNull:false,
-    },
-    descricao:{
-      type:DataTypes.TEXT,
-      allowNull:false,
-    },
-    img:{
-      type:DataTypes.STRING,
-      allowNull:true,
-      defaultValue:'semfoto'
-    },
-    promocao:{
-      type:DataTypes.BOOLEAN,
-      defaultValue:false,
-    },
-    desconto:{
-      type:DataTypes.DECIMAL(3,2),
-      allowNull:true,
-    } ,
-    preco: {
-      type:DataTypes.DECIMAL(12,2),
-      allowNull:false,
-    },
-    novopreco:{
-      type: DataTypes.DECIMAL(12,2),
-      allowNull:true,
-    }
+    titulo: DataTypes.STRING,
+    subtitulo: DataTypes.STRING,
+    img: DataTypes.STRING,
+    preco: DataTypes.DECIMAL
   }, {
     sequelize,
-    tableName:'produtos',
     modelName: 'Produto',
+    tableName:'produtos'
   });
   return Produto;
 };

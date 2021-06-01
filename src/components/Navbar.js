@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import Carrinho from './carrinho';
-import Login from './login';
+
 
 const Navbar = () => {
 
@@ -22,8 +21,8 @@ const Navbar = () => {
                 </div>
                 </div>
             </form>
-                <Carrinho />
-                <Login/>
+            <Link to='/carrinho'><i className="fa fa-cart-arrow-down fa-2x" ></i></Link>
+            <Link to='/login'><i className="fa fa-sign-in fa-2x ml-3" ></i> </Link>
         </nav>
     </header>
     );

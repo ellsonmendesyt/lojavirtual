@@ -1,6 +1,6 @@
 import React from 'react'
-import Carrossel from './carrosel';
-import Slider from './slider';
+import Carrossel from './Carousel';
+
 
 
 
@@ -21,7 +21,7 @@ function Home() {
       <div className="row my-5">
           <div className="col d-flex justify-content-around">
 
-            <Slider/>
+           
           </div>
       </div>
      

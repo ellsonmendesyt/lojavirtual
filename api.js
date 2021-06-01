@@ -1,6 +1,6 @@
 const express = require('express');
 const cors    = require('cors');
-const {sequelize,Usuario, Carrosel}  = require('./models');
+const {sequelize,Usuario, Carrosel,Produto}  = require('./models');
 
 const app = express();
 app.use(express.json())
@@ -72,14 +72,14 @@ app.post('/criar-carrosel', async(req,res)=>{
   })
 
 
-  app.get('/carroseis', async (req,res)=>{
+app.get('/carroseis', async (req,res)=>{
 
     try{
         const carroseis = await Carrosel.findAll();
         return res.status(200).json(carroseis);
     }catch(erro){
-        return res.status(500).json({msg:'erro'})
         console.error(erro);
+        return res.status(500).json({msg:'erro'})
     }
 })
 
@@ -88,13 +88,29 @@ app.post('/criar-carrosel', async(req,res)=>{
 
 
 
+////ROTAS PRA CRIAR E ADICIONAR PRODUTOS
+app.post('/criarproduto', async (req,res)=>{
 
+    const {titulo,subtitulo,img,preco}=req.body;
+    try{
+         const produto=await Produto.create({titulo,subtitulo,img,preco})
+         return res.status(200).json(produto);
+    }catch(erro){
+        console.error(erro);
+        return res.status(500).json({msg:erro});
+    }
+})
 
-
-
-
-
-
+  
+app.get('/produtos', async (req,res)=>{
+    try{
+     const produtos = await Produto.findAll();
+     return res.status(200).json(produtos)
+    }catch(erro){
+        console.error(erro);
+        return res.status(500).json({erro})
+    }
+})
 
 
 

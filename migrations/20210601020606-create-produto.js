@@ -3,39 +3,24 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('produtos', {
       id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
       },
-      nome: {
-        type:Sequelize.STRING,
+      titulo: {
+        type: Sequelize.STRING,
         allowNull:false,
       },
-      descricao:{
-        type:Sequelize.TEXT,
+      subtitulo: {
+        type: Sequelize.STRING,
         allowNull:false,
       },
-      img:{
-        type:Sequelize.STRING,
-        allowNull:true,
-        defaultValue:'semfoto',
+      img: {
+        type: Sequelize.STRING
       },
-      promocao:{
-        type:Sequelize.BOOLEAN,
-        defaultValue:false,
-      },
-      desconto:{
-        type:Sequelize.DECIMAL(3,2),
-        allowNull:true,
-      } ,
       preco: {
-        type:Sequelize.DECIMAL(12,2),
-        allowNull:false,
-      },
-      novopreco:{
-        type: Sequelize.DECIMAL(12,2),
-        allowNull:true,
+        type: Sequelize.DECIMAL
       },
       createdAt: {
         allowNull: false,
