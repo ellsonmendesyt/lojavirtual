@@ -9,7 +9,9 @@ import Carousel from './components/Carousel';
 import Cart from './components/Cart';
 import NotFound from './components/NotFound';
 import ProdutoContextProvider from './contextos/ProdutoContext';
+import ProductDetails from './components/ProductDetails'
 import {useState} from 'react';
+import Filler from './components/Filler';
 
 function App() {
 
@@ -17,17 +19,18 @@ function App() {
   
     <Router>
        <Navbar/>
-       
+      
        <Switch >
           <ProdutoContextProvider>
            <Route exact path='/' component={ProductList}/>
            <Route  path='/cart' component={Cart}/>
+           <Route  path='/details' component={ProductDetails}/>
           </ProdutoContextProvider>
         
-
        <Route  component={NotFound}/>
        </Switch>
       
+        <Filler />
      </Router>
   );
 }
