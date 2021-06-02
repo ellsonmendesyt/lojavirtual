@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Produto(props) {
+function Produto({items,listar}) {
     return (
         <div className='d'>
-            <h3>{props.produto.titulo}</h3>
+           {items.img}
+           <p>{listar()}</p>
         </div>
     )
 }

@@ -7,16 +7,17 @@ import Produto from './Produto';
 
 
 function ProductList() {
-   const {produtos,setProdutos,listar}=useContext(ProdutoContext)
+//    const {produtos,setProdutos,listar}=useContext(ProdutoContext)
+   const value=useContext(ProdutoContext)
     const buscar= async ()=>{
        const response= await axios('http://localhost:4000/produtos');
        const {data} = response;
-      setProdutos(data);
+      value.setProdutos(data);
     }
 
     useEffect(()=>{
       buscar();
-      listar();
+      
     },[])
     return (
         <>
@@ -26,9 +27,9 @@ function ProductList() {
                 <div className="row">
                     <div className="col d-flex justify-content-around">
                      {
-                         produtos && produtos.map((produto,index)=>{
+                         value.produtos && value.produtos.map((produto,index)=>{
 
-                           return <Produto key={index} produto={produto} />
+                           return <Produto key={index} items={ produto} listar={value.listar} />
                             //  return <div key={index}  className='d'>
                             //      <img  src={`${process.env.PUBLIC_URL}/assets/produtos/${p.img}`} className=" img-fluid" alt="item"/>
                             //  </div>

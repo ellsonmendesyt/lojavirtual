@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING,
     subtitulo: DataTypes.STRING,
     img: DataTypes.STRING,
+    noCarro: DataTypes.BOOLEAN,
     preco: DataTypes.DECIMAL
   }, {
     sequelize,

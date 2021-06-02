@@ -53,7 +53,7 @@ preco
 novopreco
 
 
-sequelize model:generate  --name Produto  --attributes nome:string, descricao:text, img:string, promocao:boolean, desconto:decimal, preco:decimal, novopreco:decimal
+sequelize model:generate  --name Produto  --attributes titulo:string, subtitulo:string, img:string, noCarro:boolean, preco:decimal
 
 
  
@@ -79,3 +79,57 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
  RECURSOS
  https://stackoverflow.com/questions/44175049/how-to-save-images-for-react-application/44252443
+
+
+
+
+
+
+ADICIONAR UM NOVO CAMPO NA TABELA DE PRODUTOS
+npx sequelize-cli migration:create --name modify_produtos_add_noCarro_field
+
+
+
+
+'use strict';
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('produtos', {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      titulo: {
+        type: Sequelize.STRING,
+        allowNull:false,
+      },
+      subtitulo: {
+        type: Sequelize.STRING,
+        allowNull:false,
+      },
+      noCarro:{
+        type:Sequelize.BOOLEAN,
+        defaultValue:false,
+      },
+      img: {
+        type: Sequelize.STRING
+      },
+      preco: {
+        type: Sequelize.DECIMAL
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('produtos');
+  }
+};

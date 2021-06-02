@@ -1,12 +1,12 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('produtos', {
+    await queryInterface.createTable('Produtos', {
       id: {
-        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
       },
       titulo: {
         type: Sequelize.STRING,
@@ -17,10 +17,16 @@ module.exports = {
         allowNull:false,
       },
       img: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:true,
+      },
+      noCarro: {
+        type: Sequelize.BOOLEAN,
+        defaultValue:false,
       },
       preco: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(5,2),
+        allowNull:false,
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +39,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('produtos');
+    await queryInterface.dropTable('Produtos');
   }
 };

@@ -91,9 +91,9 @@ app.get('/carroseis', async (req,res)=>{
 ////ROTAS PRA CRIAR E ADICIONAR PRODUTOS
 app.post('/criarproduto', async (req,res)=>{
 
-    const {titulo,subtitulo,img,preco}=req.body;
+    const {titulo,subtitulo,img,preco,noCarro}=req.body;
     try{
-         const produto=await Produto.create({titulo,subtitulo,img,preco})
+         const produto=await Produto.create({titulo,subtitulo,img,preco,noCarro})
          return res.status(200).json(produto);
     }catch(erro){
         console.error(erro);
@@ -112,6 +112,18 @@ app.get('/produtos', async (req,res)=>{
     }
 })
 
+
+app.delete('/produtos/:id', async(req,res)=>{
+    const {id} = req.params;
+    try{
+        const produto = await Produto.findOne({where:{id}})
+        await produto.destroy();
+        return res.status(200).json({msg:'deletado'})
+    }catch(erro){
+        console.error(erro);
+        return res.status(401).json({'msg':'não conseguimos finalizar a operacao'})
+    }
+})
 
 
 
