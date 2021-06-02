@@ -9,12 +9,17 @@ import Carousel from './components/Carousel';
 import Cart from './components/Cart';
 import NotFound from './components/NotFound';
 import ProdutoContextProvider from './contextos/ProdutoContext';
-import ProductDetails from './components/ProductDetails'
-import {useState} from 'react';
+import ProductDetails from './components/ProdutoDetails'
+
 import Filler from './components/Filler';
+import axios from 'axios';
+import React, {useState,useContext,useEffect} from 'react';
 
 function App() {
 
+
+
+  //=====================
   return (
   
     <Router>

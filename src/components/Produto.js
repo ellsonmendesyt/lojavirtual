@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+
+import PropTypes from 'prop-types'
 function Produto({items,listar}) {
 
     const {id,titulo,subtitulo,img,noCarro,preco}=items;
@@ -29,6 +31,20 @@ function Produto({items,listar}) {
     </ProdutoBox>
   )
 }
+
+Produto.propTypes={
+    items:PropTypes.shape({
+        id:PropTypes.number,
+        titulo:PropTypes.string,
+        subtitulo:PropTypes.string,
+        img:PropTypes.string,
+        preco:PropTypes.number,
+        noCarro:PropTypes.bool,
+        createdAt:PropTypes.string,
+        updatedAt:PropTypes.string,
+    }).isRequired
+};
+
 
 
 const ProdutoBox = styled.div`

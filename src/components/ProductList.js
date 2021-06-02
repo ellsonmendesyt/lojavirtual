@@ -23,7 +23,9 @@ function ProductList() {
              <div className="container">
                  <Titulo nome='Produtos' titulo='em Destaque'/>
                 <div className="row">
+                    
                      { 
+                    
                          value.produtos && value.produtos.map((produto,index)=>{
 
                            return <Produto key={index} items={ produto}  />
