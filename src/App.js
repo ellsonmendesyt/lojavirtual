@@ -20,7 +20,42 @@ function App() {
 
 
   const [produtos,setProdutos]=useState([])
-  const [atual,setAtual]=useState(null);
+  const [meuCarrinho,setMeuCarrinho]=useState([]); ///meu carrinho começa vazio
+  const [quantidade,setQuantidade]=useState(0);
+
+
+
+  const porNoCarrinho = (produto)=>{
+  
+    let jaTem=false;
+     for(let i=0;i<meuCarrinho.length;i++){
+       if(meuCarrinho[i].id === produto.id){
+        jaTem=true;
+       }
+     }
+      if(jaTem){
+        console.log('ja tem')
+        return;
+      }else{
+        produto={...produto,quantidade:1} ///cria o campo propriedade
+        setMeuCarrinho([...meuCarrinho,produto]); //add o prodtuo ao carrinho
+        console.log('nao')
+      }
+   
+  }
+
+ const tirarDoCarrinho=(produto)=>{
+   
+   let copia = [...meuCarrinho]
+   copia = copia.filter(atual =>{
+     return atual.id !== produto.id
+   })
+
+   
+   setMeuCarrinho(copia)
+ }
+
+
 
   const buscar= async ()=>{
     const response= await axios('http://localhost:4000/produtos');
@@ -38,16 +73,16 @@ function App() {
   return (
   
     <Router>
+          <ProdutoContext.Provider value={{ produtos,meuCarrinho,setMeuCarrinho,porNoCarrinho,quantidade,setQuantidade,tirarDoCarrinho}}>
        <Navbar/>
        <Switch >
-          <ProdutoContext.Provider value={{ produtos:produtos}}>
            <Route exact path='/' component={ProductList}/>
            <Route  path='/cart' component={Cart}/>
            <Route  path='/details' component={ProductDetails}/>
-          </ProdutoContext.Provider>
         
        <Route  component={NotFound}/>
        </Switch>
+          </ProdutoContext.Provider>
       
         <Filler />
      </Router>

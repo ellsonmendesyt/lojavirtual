@@ -55,7 +55,7 @@ function ProdutoDetails(props) {
              </div>
              <div className="col-md-5">
                 <div className="card p-3 my-4">
-             <ul class="list-group list-group-horizontal my-3 ">
+             <ul class="list-group list-group-horizontal my-3 d-flex flex-wrap">
                 <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/visa.png`} alt="" /></li>
                 <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/pix.png`} alt="" /></li>
                 <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/master.png`} alt="" /></li>

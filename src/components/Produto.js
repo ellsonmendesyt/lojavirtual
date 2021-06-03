@@ -1,11 +1,16 @@
-import React from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import {ProdutoContext} from '../contextos/ProdutoContext';
 
-import PropTypes from 'prop-types'
-function Produto({produto,listar}) {
+
+
+function Produto({produto}) {
 
     const {id,titulo,subtitulo,img,noCarro,preco}=produto;
+    const loja = useContext(ProdutoContext);
+
 
     return (
     <ProdutoBox className='col-9 mx-auto col-md-5 col-lg-3 my-3 '>
@@ -15,10 +20,7 @@ function Produto({produto,listar}) {
             <img src={`${process.env.PUBLIC_URL}/assets/produtos/${img}`} className="card-img-top" alt="imagem do produto"/>
           </Link>
         </div>
-        <button className='btn btn-outline-warning' disabled={noCarro ? true: false}  onClick={()=>{
-        console.log(`adicionado  ${titulo} ao Carro`)}} >
-        {noCarro ? (<p className='text-capitalized mb-0' disabled>{`no carinho`}</p>):(<i className="fa fa-shopping-cart " aria-hidden="true"> adicicionar</i>)}
-        </button>
+        <button className='btn btn-outline-warning'   onClick={()=>loja.porNoCarrinho(produto)} >por no carro</button>
         <div className="card-footer d-flex justify-content-between">
             <p className='align-self-center mb-0'>{titulo}</p>
             <h5 className='text-info font-italic mb-0'> <span className='mr-1'>R$</span>{preco}</h5>
