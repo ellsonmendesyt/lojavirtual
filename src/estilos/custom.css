@@ -163,3 +163,25 @@ FILLER
     height: 100%;
     
 }
+
+
+/* 
+CARRINHO DE COMPRAS
+ */
+
+ .carrinho{
+     min-height:90vh;
+     border: 1px solid orange;
+     background-color:#fff;
+     border:none;
+ }
+
+ .produto-box{
+     width: 70px;
+     height: 70px;
+    margin-right: 20px;
+ }
+
+ .produto-thumbnail{
+     width: 70px;
+ }

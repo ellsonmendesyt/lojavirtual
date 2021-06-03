@@ -1,4 +1,4 @@
-import React,{useContext, useEffect,useState} from 'react'
+import React,{useContext,useState} from 'react'
 import {Link} from 'react-router-dom';
 import {ProdutoContext} from '../contextos/ProdutoContext';
 
@@ -58,11 +58,11 @@ function ProdutoDetails(props) {
              </div>
              <div className="col-md-5">
                 <div className="card p-3 my-4">
-             <ul class="list-group list-group-horizontal my-3 d-flex flex-wrap">
-                <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/visa.png`} alt="" /></li>
-                <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/pix.png`} alt="" /></li>
-                <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/master.png`} alt="" /></li>
-                <li class="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/boleto.png`} alt="" /></li>
+             <ul className="list-group list-group-horizontal my-3 d-flex flex-wrap">
+                <li className="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/visa.png`} alt="" /></li>
+                <li className="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/pix.png`} alt="" /></li>
+                <li className="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/master.png`} alt="" /></li>
+                <li className="list-group-item border-0"><img src={`${process.env.PUBLIC_URL}/assets/outros/boleto.png`} alt="" /></li>
             </ul>
                 </div>
              </div>

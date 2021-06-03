@@ -5,14 +5,13 @@ import  Navbar from './components/Navbar';
 import '../node_modules/bootstrap/dist/js/bootstrap.min'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
  import ProductList from './components/ProductList'
-import Carousel from './components/Carousel';
 import Cart from './components/Cart';
 import NotFound from './components/NotFound';
 import ProductDetails from './components/ProdutoDetails'
 
 import Filler from './components/Filler';
 import axios from 'axios';
-import React, {useState,useContext,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 
 import {ProdutoContext} from './contextos/ProdutoContext';
 
@@ -26,55 +25,59 @@ function App() {
 
 
   const porNoCarrinho = (produto)=>{
-  
     let jaTem=false;
      for(let i=0;i<meuCarrinho.length;i++){
        if(meuCarrinho[i].id === produto.id){
         jaTem=true;
-        
        }
      }
       if(jaTem){
         console.log('ja tem')
-     
       }else{
         produto={...produto,quantidade:1} ///cria o campo propriedade
         setMeuCarrinho([...meuCarrinho,produto]); //add o prodtuo ao carrinho
         console.log('nao')
       }
-   
   }
 
  const tirarDoCarrinho=(produto)=>{
-   
    let copia = [...meuCarrinho]
    copia = copia.filter(atual =>{
      return atual.id !== produto.id
    })
-
-   
    setMeuCarrinho(copia)
  }
 
 
 
-  const buscar= async ()=>{
+  const pegarDoBanco= async ()=>{
     const response= await axios('http://localhost:4000/produtos');
     const {data} = response;
    setProdutos(data); //salva os produtos no contexto
  }
 
+ const calcularTotal=()=>{
+   let total=0;
+
+  meuCarrinho.length>0 && meuCarrinho.forEach((p)=>{
+     total += parseFloat(p.preco) * p.quantidade;
+   })
+
+   return total;
+ }
+
+
   //=====================
 
   useEffect(()=>{
-    buscar()
+    pegarDoBanco()
   },[])
 
 
   return (
   
     <Router>
-          <ProdutoContext.Provider value={{ produtos,meuCarrinho,setMeuCarrinho,porNoCarrinho,quantidade,setQuantidade,tirarDoCarrinho}}>
+          <ProdutoContext.Provider value={{ produtos,meuCarrinho,setMeuCarrinho,porNoCarrinho,quantidade,setQuantidade,tirarDoCarrinho,calcularTotal}}>
        <Navbar/>
        <Switch >
            <Route exact path='/' component={ProductList}/>
