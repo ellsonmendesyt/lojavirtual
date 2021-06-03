@@ -3,21 +3,18 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import PropTypes from 'prop-types'
-function Produto({items,listar}) {
+function Produto({produto,listar}) {
 
-    const {id,titulo,subtitulo,img,noCarro,preco}=items;
+    const {id,titulo,subtitulo,img,noCarro,preco}=produto;
 
     return (
-    <ProdutoBox className='col-9 mx-auto col-md-6 col-lg-3 my-3 '>
+    <ProdutoBox className='col-9 mx-auto col-md-5 col-lg-3 my-3 '>
     <div className="card shop-card " >
         <div className="img-container p-3 " onClick={()=>console.log(`clicou na imagem ${titulo}`)}>
-         <Link to="/details" >
-            <img src={`${process.env.PUBLIC_URL}/assets/produtos/${img}`} className="card-img-top" alt="..."/>
+         <Link to={{ pathname:'/details',state:produto }}   >                                                           {/* MANDO O PRODUTO ATUAL AQUI */}
+            <img src={`${process.env.PUBLIC_URL}/assets/produtos/${img}`} className="card-img-top" alt="imagem do produto"/>
           </Link>
         </div>
-        {/* <h5 className="card-title">{titulo}</h5> */}
-        {/* <p className="card-text">{titulo}</p> */}
-
         <button className='btn btn-outline-warning' disabled={noCarro ? true: false}  onClick={()=>{
         console.log(`adicionado  ${titulo} ao Carro`)}} >
         {noCarro ? (<p className='text-capitalized mb-0' disabled>{`no carinho`}</p>):(<i className="fa fa-shopping-cart " aria-hidden="true"> adicicionar</i>)}
@@ -33,7 +30,7 @@ function Produto({items,listar}) {
 }
 
 Produto.propTypes={
-    items:PropTypes.shape({
+    produto:PropTypes.shape({
         id:PropTypes.number,
         titulo:PropTypes.string,
         subtitulo:PropTypes.string,

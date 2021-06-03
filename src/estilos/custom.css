@@ -154,3 +154,12 @@ FILLER
 .filler{
     background-color: purple;
 }
+
+
+.img-full{
+    width: 100%;
+    object-fit:contain;
+    object-position: bottom;
+    height: 100%;
+    
+}
