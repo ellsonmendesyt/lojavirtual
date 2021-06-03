@@ -31,11 +31,12 @@ function App() {
      for(let i=0;i<meuCarrinho.length;i++){
        if(meuCarrinho[i].id === produto.id){
         jaTem=true;
+        
        }
      }
       if(jaTem){
         console.log('ja tem')
-        return;
+     
       }else{
         produto={...produto,quantidade:1} ///cria o campo propriedade
         setMeuCarrinho([...meuCarrinho,produto]); //add o prodtuo ao carrinho

@@ -10,8 +10,6 @@ function Cart() {
     return (
         <div>
             <h4>Suas Compras</h4>   
-
-
         {
             loja.meuCarrinho.length > 0 && loja.meuCarrinho.map((p)=>{
                 return(
@@ -37,5 +35,4 @@ function Cart() {
         </div>
     )
 }
-
 export default Cart

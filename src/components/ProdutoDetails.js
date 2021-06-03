@@ -7,7 +7,8 @@ function ProdutoDetails(props) {
     
    const value = useContext(ProdutoContext);
    var produtoAtual = props.location.state; 
-   
+   const [meuCarrinho,setMeuCarrinho]=useState([]); ///meu carrinho começa vazio
+   const loja = useContext(ProdutoContext);
  
   
     return (
@@ -39,7 +40,9 @@ function ProdutoDetails(props) {
                     </div>
                     <div className="card-footer">
                         <Link to='/' className='btn btn-primary btn-block'>Comprar agora</Link>
-                        <Link to='/' className='btn btn-primary btn-block'>Adicionar ao Carrinho</Link>
+                        {/* <Link to='/' className='btn btn-primary btn-block'>Adicionar ao Carrinho</Link> */}
+                        {/* POR NO CARRINHO AQUI TAMBEM */}
+                        <button className='btn btn-primary btn-block  '   onClick={()=>loja.porNoCarrinho(produtoAtual)} >por no carro</button>
                     </div>
                 </div>
              </div>
