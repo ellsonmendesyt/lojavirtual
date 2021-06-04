@@ -9,7 +9,7 @@ import Cart from './components/Cart';
 import NotFound from './components/NotFound';
 import ProductDetails from './components/ProdutoDetails'
 
-import Filler from './components/Filler';
+import Footer from './components/Footer';
 import axios from 'axios';
 import React, {useState,useEffect} from 'react';
 
@@ -104,7 +104,7 @@ useEffect(()=>{
        </Switch>
           </ProdutoContext.Provider>
       
-        <Filler />
+        <Footer />
      </Router>
   );
 }

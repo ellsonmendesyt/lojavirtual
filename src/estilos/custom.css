@@ -185,3 +185,12 @@ CARRINHO DE COMPRAS
  .produto-thumbnail{
      width: 70px;
  }
+
+
+ /* 
+ RODAPE
+ */
+
+.footer{
+    border-top:1px solid lightgray;
+}
