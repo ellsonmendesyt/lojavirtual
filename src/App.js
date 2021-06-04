@@ -22,7 +22,14 @@ function App() {
   const [meuCarrinho,setMeuCarrinho]=useState([]); ///meu carrinho começa vazio
   const [quantidade,setQuantidade]=useState(0);
  //quantidade no carrinho
- const [count,setCount]=useState(meuCarrinho.length);
+ const [count,setCount]=useState(0);
+
+
+
+useEffect(()=>{
+  setCount(meuCarrinho.length)
+},[meuCarrinho]);
+
 
 
   const porNoCarrinho = (produto)=>{

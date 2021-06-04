@@ -39,9 +39,15 @@ function Cart() {
                           <td> {p.titulo}</td>
                           <td> {p.subtitulo}</td>
                           <td> <span>{`R$ `}</span> {p.preco}</td>
+
+                             <td><button className='btn btn-sm btn-primary' onClick={()=>{aumentar(p);loja.setCount(loja.count +1)}}>+</button></td>
                           <td> <span>{`qt `}</span> {p.quantidade}  </td>
-                            <td><button onClick={()=>{aumentar(p);loja.setCount(loja.count +1)}}>+</button></td>
-                            <td><button onClick={()=>{diminuir(p);loja.setCount(loja.count> 1 ? loja.count -1:loja.tirarDoCarrinho(p))}}>-</button></td>
+                            <td><button className='btn btn-sm btn-primary' onClick={()=>{diminuir(p);loja.setCount((p.quantidade>0) ? parseInt(loja.count -1):loja.tirarDoCarrinho(p))}}>-</button></td> 
+                          
+                         
+                            
+
+
                           <td> <button className='btn btn-primary btn-sm' onClick={()=>loja.tirarDoCarrinho(p)}>remover</button> </td>
                       </tr>  
                     )
