@@ -21,7 +21,8 @@ function App() {
   const [produtos,setProdutos]=useState([])
   const [meuCarrinho,setMeuCarrinho]=useState([]); ///meu carrinho começa vazio
   const [quantidade,setQuantidade]=useState(0);
-
+ //quantidade no carrinho
+ const [count,setCount]=useState(meuCarrinho.length);
 
 
   const porNoCarrinho = (produto)=>{
@@ -36,6 +37,7 @@ function App() {
       }else{
         produto={...produto,quantidade:1} ///cria o campo propriedade
         setMeuCarrinho([...meuCarrinho,produto]); //add o prodtuo ao carrinho
+        setCount(count + 1)
         console.log('nao')
       }
   }
@@ -46,6 +48,10 @@ function App() {
      return atual.id !== produto.id
    })
    setMeuCarrinho(copia)
+   if(count>0){
+
+     setCount(count- produto.quantidade)
+   }
  }
 
 
@@ -67,6 +73,9 @@ function App() {
  }
 
 
+
+
+
   //=====================
 
   useEffect(()=>{
@@ -77,7 +86,7 @@ function App() {
   return (
   
     <Router>
-          <ProdutoContext.Provider value={{ produtos,meuCarrinho,setMeuCarrinho,porNoCarrinho,quantidade,setQuantidade,tirarDoCarrinho,calcularTotal}}>
+          <ProdutoContext.Provider value={{ produtos,meuCarrinho,setMeuCarrinho,porNoCarrinho,quantidade,setQuantidade,tirarDoCarrinho,calcularTotal,count,setCount}}>
        <Navbar/>
        <Switch >
            <Route exact path='/' component={ProductList}/>

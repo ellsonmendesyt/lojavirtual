@@ -1,13 +1,13 @@
 import {useState,useEffect,useContext} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-// import {ProdutoContext} from '../contextos/ProdutoContext';
+import {ProdutoContext} from '../contextos/ProdutoContext';
 const Navbar = () => {
 
 //   const [clicou, setClicou]=useState(false);
 
 //   const handleClick = ()=>{ setClicou(!clicou)}
-// const loja = useContext(ProdutoContext);
+const loja = useContext(ProdutoContext);
 
 
 
@@ -26,11 +26,11 @@ const Navbar = () => {
             </form>
             <Link to='/cart'>
                 <ButtonContainer>
-                    <span className='mr-2'><i className="fa fa-cart-arrow-down " ></i></span>
-                    {
+                    <span className='mr-2'><i className="fa fa-cart-arrow-down " ></i> {loja.count}</span>
+                    
                         
-                        '?'
-                    }
+                        
+                    
                 </ButtonContainer>
                 </Link>
             <Link to='/login'><i className="fa fa-sign-in fa-2x ml-3" ></i> </Link>
