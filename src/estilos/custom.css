@@ -4,6 +4,11 @@ body{
 .d{
     border: 2px solid blueviolet;
 }
+
+*{
+    box-sizing: border-box;
+}
+
 /*============================
  BARRA DE NAVEGAÇÃO
 =============================*/
@@ -137,12 +142,6 @@ CARROSSEL
 
 
 
-/* .shop-card{
-    border: none !important;
-}
-.shop-card .card-footer{
-    border: none !important;
-} */
 
 
 
@@ -175,6 +174,12 @@ CARRINHO DE COMPRAS
      background-color:#fff;
      border:none;
  }
+ .qtd{
+     font-size: 1rem;
+     color:gray;
+     font-weight: bold;
+ }
+
 
  .produto-box{
      width: 70px;
@@ -194,3 +199,5 @@ CARRINHO DE COMPRAS
 .footer{
     border-top:1px solid lightgray;
 }
+
+

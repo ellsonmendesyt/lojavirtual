@@ -26,7 +26,7 @@ const loja = useContext(ProdutoContext);
             </form>
             <Link to='/cart'>
                 <ButtonContainer>
-                    <span className='mr-2'><i className="fa fa-cart-arrow-down " ></i> {loja.count}</span>
+                    <span className='mr-2'><i className="fa fa-cart-arrow-down " ></i> <span className='qtd'>{loja.count}</span> </span>
                     
                         
                         
@@ -44,6 +44,7 @@ const ButtonContainer= styled.button`
 text-transform:capitalize;
 font-size:1.4rem;
 background:transparent;
+border:none;
 `
 
 export default Navbar;

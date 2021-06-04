@@ -129,6 +129,30 @@ app.delete('/produtos/:id', async(req,res)=>{
 
 
 
+///atualizar produto
+app.put('/produtos/:id', async(req,res)=>{
+    const {id}=req.params;
+    const {titulo,subtitulo,img,preco}=req.body;
+
+    try{
+        const produto = await Produto.findOne({where:{id}})
+        produto.titulo=titulo;
+        produto.subtitulo=subtitulo;
+        produto.img=img;
+        produto.preco=preco;
+        produto.save();
+        res.status(200).json({msg:produto})
+
+    }catch(erro){
+        res.status(400).json({msg:'erro ao atualizar'});
+    }
+})
+
+
+
+
+
+
 
 
 app.listen(4000,async()=>{

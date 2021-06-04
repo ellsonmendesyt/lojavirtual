@@ -5,18 +5,17 @@ function Footer() {
         <div className="container-fluid  footer ">
             <div className='row bg-white py-4'>
             <div className="col-md-4 mx-auto  text-muted px-lg-5 pt-4">
-            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Av. Embaixador Abelardo Bueno, 600
-            Bloco 1B – Sala 471
-            22775-031 – Barra da Tijuca
-            Rio de Janeiro, RJ</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Rua 16, 678 São Francisco, 
+            Bloco 2B – Sala 2
+            65636-766 – Timon
+            Maranhão, MA</p>
             </div>
             <div className="col-md-4 px-lg-5 pt-4">
 
            <ul className="nav flex-column  text-muted ">
                <li className="nav-item "><i class="fa fa-envelope" aria-hidden="true"></i> contato@rockapp.com.br</li>
-               <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55 (21) 998992-4108</li>
-               <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55(11) 3957-9029</li>
-               <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55 (21) 998992-4108</li>
+               <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55(11)  93957-8829</li>
+               <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55 (21) 988992-8108</li>
                <li className="nav-item"><i class="fa fa-phone-square" aria-hidden="true"></i> +55 (99) 98841-8596</li>
            </ul>
             </div>

@@ -13,7 +13,7 @@ function Produto({produto}) {
 
 
     return (
-    <ProdutoBox className='col-9 mx-auto col-md-5 col-lg-3 my-3 '>
+    <ProdutoBox className='col-9 mx-auto col-md-4 col-lg-4 m-2 '>
     <div className="card shop-card " >
         <div className="img-container p-3 " onClick={()=>console.log(`clicou na imagem ${titulo}`)}>
          <Link to={{ pathname:'/details',state:produto }}   >                                                           {/* MANDO O PRODUTO ATUAL AQUI */}
@@ -66,6 +66,8 @@ const ProdutoBox = styled.div`
  .img-container:hover .card-img-top{
      transform:scale(1.07)
  }
+ max-width:300px;
+
 
 `;
 
