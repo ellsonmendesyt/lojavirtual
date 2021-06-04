@@ -192,8 +192,6 @@ app.post('/auth', async(req,res)=>{
         jwt.verify(token,jwtSalt, (erro,dados)=>{
             if(erro){
                 res.status(401).json({erro:'token invalido'})
-
-                
             }else{
                 //se ta tudo ok, cria uma compo na req
                 req.token=token;
