@@ -18,6 +18,7 @@ function Cart() {
    },[loja.count,loja.meuCarrinho]);
 
    const aumentar=(produto)=>{produto.quantidade+=1}
+   const diminuir=(produto)=>{produto.quantidade-=1}
 
 
     return (
@@ -40,6 +41,7 @@ function Cart() {
                           <td> <span>{`R$ `}</span> {p.preco}</td>
                           <td> <span>{`qt `}</span> {p.quantidade}  </td>
                             <td><button onClick={()=>{aumentar(p);loja.setCount(loja.count +1)}}>+</button></td>
+                            <td><button onClick={()=>{diminuir(p);loja.setCount(loja.count> 1 ? loja.count -1:loja.tirarDoCarrinho(p))}}>-</button></td>
                           <td> <button className='btn btn-primary btn-sm' onClick={()=>loja.tirarDoCarrinho(p)}>remover</button> </td>
                       </tr>  
                     )
