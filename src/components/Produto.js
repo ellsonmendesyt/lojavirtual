@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {ProdutoContext} from '../contextos/ProdutoContext';
 
-
-
 function Produto({produto}) {
 
     const {id,titulo,subtitulo,img,noCarro,preco}=produto;
@@ -44,8 +42,6 @@ Produto.propTypes={
     }).isRequired
 };
 
-
-
 const ProdutoBox = styled.div`
  display:flex;
  justify-content-stretch;
@@ -67,8 +63,6 @@ const ProdutoBox = styled.div`
      transform:scale(1.07)
  }
  max-width:300px;
-
-
 `;
 
 export default Produto
