@@ -8,8 +8,6 @@ function Produto({produto}) {
 
     const {id,titulo,subtitulo,img,noCarro,preco}=produto;
     const loja = useContext(ProdutoContext);
-
-
     return (
     <ProdutoBox className='col-9 mx-auto col-md-4 col-lg-4 m-2 '>
     <div className="card shop-card " >
